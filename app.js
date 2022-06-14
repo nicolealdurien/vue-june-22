@@ -8,19 +8,22 @@ const app = Vue.createApp({
           title: 'The Princess Bride',
           director: 'Rob Reiner',
           released: 1987,
-          img: ''
+          img: 'images/tpb.jpg',
+          isBechdel: false
         },
         {
           title: 'Office Space',
           director: 'Mike Judge',
           released: 1999,
-          img: ''
+          img: 'images/os.jpg',
+          isBechdel: false
         },
         {
           title: 'Blazing Saddles',
           director: 'Mel Brooks',
           released: 1974,
-          img: ''
+          img: 'images/bs.jpg',
+          isBechdel: true
         }
       ],
       x: 0,
@@ -38,6 +41,9 @@ const app = Vue.createApp({
     handleMousemove(e) {
       this.x = e.offsetX;
       this.y = e.offsetY;
+    },
+    toggleBechdel(e, movie) {
+      movie.isBechdel = !movie.isBechdel;
     }
   }
 });
